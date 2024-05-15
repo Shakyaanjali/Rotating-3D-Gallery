@@ -1,0 +1,74 @@
+/* author:  https://codepen.io/raulperez0481/pen/yLWLePm
+Raúl Pérez Caballero*/
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
+}
+
+.image-container {
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    transform: perspective(1000px) rotateY(0deg);
+    transition: transform .7s;
+}
+
+.image-container span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform: rotateY(calc(var(--i) * 90deg)) translateZ(400px);
+}
+
+.image-container span img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  filter: grayscale(100%);
+
+}
+
+.btn-container {
+    position: relative;
+    width: 80%;
+}
+
+.btn {
+  position: absolute;
+  bottom: -140px;
+  background-color: slateblue;
+  color: white;
+  border: none;
+  padding: 10px 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.btn:hover {
+    filter: brightness(1.5);
+}
+
+.image-container span img:hover {
+  filter: none;
+}
+
+#prev {
+    left: 20%;
+}
+
+#next {
+    right: 20%;
+}
